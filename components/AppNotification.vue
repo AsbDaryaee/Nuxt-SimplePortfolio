@@ -16,9 +16,16 @@
           </svg>
         </button>
       </div>
-      <div class="flex items-center mt-2 rounded-lg py-1 cursor-pointer">
+      <div
+        class="flex items-center mt-2 rounded-lg py-1 cursor-pointer"
+        @click.prevent="handleNotificationClick"
+      >
         <div class="relative flex flex-shrink-0 items-end">
-          <img class="h-16 w-16 rounded-full" src="/images/avatar.jpg" />
+          <img
+            class="h-16 w-16 rounded-full"
+            src="/images/avatar.jpg"
+            draggable="false"
+          />
           <span
             class="absolute h-4 w-4 bg-green-400 rounded-full bottom-0 right-0 border-2 border-slate-900"
           ></span>
@@ -39,5 +46,9 @@
 </template>
 
 <script setup lang="ts">
-
+const emit = defineEmits();
+function handleNotificationClick() {
+  navigateTo("/contact");
+  emit("notificationOff");
+}
 </script>

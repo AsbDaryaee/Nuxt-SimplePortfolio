@@ -1,7 +1,12 @@
 <template>
   <header
-    class="relative w-full h-20 flex justify-end items-center overflow-hidden bg-[#252B48]"
+    class="relative w-full h-20 flex justify-between items-center overflow-hidden bg-[#252B48]"
   >
+    <div class="text-slate-500 font-sans font-semibold mx-10">
+      <NuxtLink to="/" class="mx-4">Home</NuxtLink>
+      <NuxtLink to="/about" class="mx-4">About</NuxtLink>
+      <NuxtLink to="/contact" class="mx-4">Contact</NuxtLink>
+    </div>
     <div
       class="relative mr-16 cursor-pointer bg-[#2d3350] p-2 rounded-full"
       @click.prevent="notificationOn"
@@ -63,7 +68,7 @@ onMounted(() => {
 });
 </script>
 
-<style scoped>
+<style>
 svg {
   width: 25px;
   height: 25px;
@@ -84,5 +89,9 @@ svg {
   100% {
     opacity: 0%;
   }
+}
+
+.router-link-active {
+  @apply text-[#42b883] border-b-4 border-[#393f5b];
 }
 </style>

@@ -1,14 +1,14 @@
 <template>
   <footer
-    class="w-full h-20 bg-[#252B48] flex items-center justify-between fixed bottom-0"
+    class="w-full h-20 bg-[#252B48] flex items-center justify-end fixed bottom-0"
   >
     <section
-      class="flex items-center mr-10 hover:-translate-y-1 text-slate-50 transition duration-1000 ease-in-out"
+      class="flex items-center hover:-translate-y-1 text-slate-50 transition duration-1000 ease-in-out"
     >
       <a
         href="https:///github.com/asbdaryaee"
         target="_blank"
-        class="mx-10 flex"
+        class="mx-12 flex"
       >
         <svg
           viewBox="0 0 20 20"
