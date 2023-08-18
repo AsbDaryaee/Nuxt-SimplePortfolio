@@ -1,0 +1,42 @@
+[
+  {
+    "id": 0,
+    "name": "HTML",
+    "svg": "/images/svg/html.svg"
+  },
+  {
+    "id": 1,
+    "name": "css",
+    "svg": "/images/svg/css.svg"
+  },
+  {
+    "id": 2,
+    "name": "javascript",
+    "svg": "/images/svg/javascript.svg"
+  },
+  {
+    "id": 3,
+    "name": "nodejs",
+    "svg": "/images/svg/nodejs.svg"
+  },
+  {
+    "id": 4,
+    "name": "vuejs",
+    "svg": "/images/svg/vuejs.svg"
+  },
+  {
+    "id": 5,
+    "name": "nuxtjs",
+    "svg": "/images/svg/nuxtjs.svg"
+  },
+  {
+    "id": 6,
+    "name": "react",
+    "svg": "/images/svg/react.svg"
+  },
+  {
+    "id": 7,
+    "name": "tailwind",
+    "svg": "/images/svg/tailwind.svg"
+  }
+]
