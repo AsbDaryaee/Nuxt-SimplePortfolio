@@ -1,9 +1,11 @@
 <template>
   <div
-    class="flex justify-center items-center w-full h-[calc(100vh-10rem)] relative"
+    class="flex justify-evenly items-center w-full h-[calc(100vh-10rem)] relative"
   >
-    <section class="mx-10"></section>
-    <section class="mx-10">
+    <section>
+      <AppContactInfo />
+    </section>
+    <section>
       <AppContactForm />
     </section>
   </div>

@@ -1,5 +1,7 @@
 <template>
-  <h1 class="text-4xl border-b-[#42b883] text-slate-200 mb-8">
+  <h1
+    class="text-4xl border-b-2 border-b-[#42b883] pb-2 text-slate-200 mb-8 inline-block"
+  >
     Send Me A Message
   </h1>
   <form>
@@ -112,7 +114,7 @@
     <button
       @click.prevent="submitForm"
       :disabled="pending"
-      class="px-6 py-3 bg-[#42b883] rounded text-[#252B48] font-semibold hover:bg-green-200 transition-all duration-300 ease-in-out"
+      class="px-6 py-3 bg-[#42b883] rounded text-[#252B48] font-bold hover:bg-emerald-300 transition-all duration-300 ease-in-out"
     >
       Submit
     </button>
