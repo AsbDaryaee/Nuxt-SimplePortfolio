@@ -20,19 +20,14 @@
           About Me
         </h1>
         <p class="text-slate-50 indent-4 text-justify">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id eum, nemo
-          cupiditate facere ut a repudiandae voluptatem ea exercitationem culpa
-          nulla voluptates numquam iste suscipit eligendi laboriosam consequatur
-          iure quae! Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          Quam ex nesciunt repellat? Voluptate ea exercitationem porro
-          reprehenderit aliquid placeat ad recusandae qui eum! Ex repudiandae,
-          quaerat adipisci sapiente incidunt in. Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Cum quas obcaecati vel fugit? Reiciendis
-          quas voluptate explicabo fuga cum. In blanditiis nihil iure minus
-          consequuntur amet. Mollitia inventore numquam iure! Lorem ipsum dolor
-          sit amet consectetur adipisicing elit. Temporibus impedit, doloremque,
-          amet autem id fuga alias quibusdam quaerat maiores adipisci voluptatem
-          beatae dolore, illo ipsa harum nemo? Corrupti, vero cupiditate!
+          I started my programming journey in college, when I was studying
+          genetics. I quickly realized that I wasn't passionate about genetics,
+          but I was fascinated by the idea of using code to create something
+          new. I started teaching myself Python, and then I met JavaScript.
+          JavaScript opened up a whole new world of possibilities for me, and I
+          quickly fell in love with both backend and frontend development. Since
+          then, I've built a number of web applications and I'm excited to see
+          what the future holds for me in the field of software engineering.
         </p>
       </article>
     </section>

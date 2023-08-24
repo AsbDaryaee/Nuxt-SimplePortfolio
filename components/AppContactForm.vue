@@ -1,6 +1,6 @@
 <template>
   <h1 class="text-4xl border-b-[#42b883] text-slate-200 mb-8">
-    Send Me Message
+    Send Me A Message
   </h1>
   <form>
     <!-- Name -->
@@ -13,13 +13,12 @@
           First Name
         </label>
         <input
-          v-model="Form.firstName"
-          class="appearance-none block w-full text-gray-700 bg-gray-200 borde rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+          v-model="contactForm.firstName"
+          class="appearance-none block border-4 w-full text-gray-700 bg-gray-200 borde rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
           :class="{
             'border-red-500 border-4 focus:border-red-500 ':
               v$.firstName.$error,
           }"
-          @keyup="v$.firstName.$touch"
           id="first-name"
           type="text"
           placeholder="Name"
@@ -33,15 +32,14 @@
           Last Name
         </label>
         <input
-          v-model="Form.lastName"
-          class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          v-model="contactForm.lastName"
+          class="appearance-none block w-full border-4 bg-gray-200 text-gray-700 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
           id="last-name"
           type="text"
           placeholder="(Optional)"
           :class="{
             'border-red-500 border-4 focus:border-red-500 ': v$.lastName.$error,
           }"
-          @keyup="v$.lastName.$touch"
         />
       </div>
     </div>
@@ -56,15 +54,14 @@
           Email
         </label>
         <input
-          v-model="Form.email"
-          class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+          v-model="contactForm.email"
+          class="appearance-none block w-full border-4 bg-gray-200 text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
           id="email"
           type="text"
           placeholder="youremail@example.com"
           :class="{
             'border-red-500 border-4 focus:border-red-500 ': v$.email.$error,
           }"
-          @keyup="v$.email.$touch"
         />
       </div>
       <div class="w-full md:w-1/2 px-3">
@@ -75,15 +72,14 @@
           Phone
         </label>
         <input
-          v-model="Form.phone"
-          class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          v-model="contactForm.phone"
+          class="appearance-none block w-full border-4 bg-gray-200 text-gray-700 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
           id="phone"
           type="text"
           placeholder="(Optional)"
           :class="{
             'border-red-500 border-4 focus:border-red-500 ': v$.phone.$error,
           }"
-          @keyup="v$.phone.$touch"
         />
       </div>
     </div>
@@ -98,25 +94,23 @@
         >
         <div class="px-3 py-2 rounded-lg w-full items-center justify-center">
           <textarea
-            v-model="Form.message"
+            v-model="contactForm.message"
             id="message"
             rows="1"
-            class="appearance-none resize-none block w-full h-24 bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+            class="appearance-none resize-none block w-full h-24 border-4 bg-gray-200 text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             placeholder="Your message..."
             :class="{
               'border-red-500 border-4 focus:border-red-500 ':
                 v$.message.$error,
             }"
-            @keyup="v$.message.$touch"
           ></textarea>
         </div>
       </div>
     </div>
     <!-- Text Area -->
-
     <!-- Button -->
     <button
-      @click.prevent="submitForm(Form)"
+      @click.prevent="submitForm"
       :disabled="pending"
       class="px-6 py-3 bg-[#42b883] rounded text-[#252B48] font-semibold hover:bg-green-200 transition-all duration-300 ease-in-out"
     >
@@ -124,10 +118,21 @@
     </button>
     <!-- Button -->
   </form>
+  <section
+    v-if="isNotifShowing && notifMessage[0] === 'success'"
+    class="absolute bg-slate-900 text-slate-100 rounded-2xl p-6 right-12 -top-2"
+  >
+    <h1>✔️ {{ notifMessage[1] }}</h1>
+  </section>
+  <section
+    v-else-if="isNotifShowing && notifMessage[0] === 'error'"
+    class="absolute bg-slate-900 text-slate-100 rounded-2xl p-6 right-12 -top-2"
+  >
+    <h1>❌ {{ notifMessage[1] }}</h1>
+  </section>
 </template>
 
 <script setup lang="ts">
-import Message from "../types/message.type";
 import {
   required,
   email,
@@ -137,6 +142,7 @@ import {
   numeric,
 } from "@vuelidate/validators";
 import { useVuelidate } from "@vuelidate/core";
+import Message from "~/types/message.type";
 
 const rules = computed(() => {
   return {
@@ -150,55 +156,73 @@ const rules = computed(() => {
       maxLength: maxLength(320),
     },
   };
-});
+}, {});
 
-const Form = reactive({
+const contactForm = reactive({
   firstName: "",
   lastName: "",
   email: "",
   phone: "",
   message: "",
 });
+const isNotifShowing = ref(false);
+const notifMessage = ref(["", ""]);
 const pending = ref(false);
 
-const v$ = useVuelidate(rules, Form);
+watch(isNotifShowing, (oldVal, newVal, onCleanup) => {
+  const timer = setTimeout(() => {
+    isNotifShowing.value = false;
+  }, 5000);
 
+  onCleanup(() => {
+    clearTimeout(timer);
+  });
+});
+
+const v$ = useVuelidate(rules, contactForm);
 async function submitForm() {
   pending.value = true;
 
   const result = await v$.value.$validate();
 
   if (result) {
-    try {
-      const { data: response } = await useFetch("/api/message", {
-        method: "post",
-        body: {
-          data: Form,
-        },
-      });
-      if (response) {
-        pending.value = false;
-      }
-    } catch (error) {
-      console.log(error);
+    sendData({ ...contactForm });
+  } else {
+    notifMessage.value[0] = "error";
+    notifMessage.value[1] = "Please Fill The Form Carefully...";
+    isNotifShowing.value = true;
+    pending.value = false;
+  }
+}
+async function sendData(payload: Message) {
+  try {
+    const { data: response, status } = await useFetch("/api/message", {
+      method: "post",
+      body: {
+        data: payload,
+      },
+    });
+    if (status.value === "success") {
+      notifMessage.value[0] = "success";
+      notifMessage.value[1] = "Your Message Sent Successfully";
+      isNotifShowing.value = true;
       pending.value = false;
     }
-  } else {
+  } catch (error) {
+    notifMessage.value[0] = "error";
+    notifMessage.value[1] = "Sorry, Somthing Isn't Right, Try Later...";
+    isNotifShowing.value = true;
     pending.value = false;
-    console.log("Form Is not Complete");
   }
 }
 </script>
 
 <style scoped>
-/* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
-/* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
 }
