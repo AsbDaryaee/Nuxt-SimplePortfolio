@@ -1,8 +1,6 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@vueuse/nuxt", "nuxt-mongoose"],
-  devtools: { enabled: false },
-  css: ["~/assets/css/main.css"],
+  modules: ["nuxt-mongoose"],
+  css: ["~/assets/css/main.scss"],
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -11,5 +9,10 @@ export default defineNuxtConfig({
   },
   app: {
     pageTransition: { name: "page", mode: "out-in" },
+  },
+  mongoose: {
+    uri: process.env.MONGODB_URI,
+    options: {},
+    modelsDir: "models",
   },
 });
