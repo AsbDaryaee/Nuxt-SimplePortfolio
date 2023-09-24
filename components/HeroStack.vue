@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center items-center w-1/2 my-2">
+  <div class="flex justify-center items-center md:w-1/2 my-2">
     <div
       class="flex justify-around items-center rounded-full p-2 w-full stack-bar"
     >

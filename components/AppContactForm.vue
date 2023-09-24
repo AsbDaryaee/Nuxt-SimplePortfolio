@@ -1,11 +1,11 @@
 <template>
-  <h1 class="text-4xl pb-2 mb-8 inline-block contanct-heading">
+  <h1 class="md:text-4xl text-3xl text-center pb-2 mb-8 mx-4 contanct-heading">
     Send Me A Message
   </h1>
   <form>
     <!-- Name -->
-    <div class="flex flex-wrap -mx-3 mb-6">
-      <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+    <div class="flex justify-center items-center flex-wrap -mx-3 md:mb-6">
+      <div class="md:w-1/2 px-3 mb-6 md:mb-0 w-3/4">
         <label
           class="block uppercase tracking-wide text-xs font-bold mb-2"
           for="first-name"
@@ -23,7 +23,7 @@
           placeholder="Name"
         />
       </div>
-      <div class="w-full md:w-1/2 px-3">
+      <div class="md:w-1/2 px-3 mb-6 md:mb-0 w-3/4">
         <label
           class="block uppercase tracking-wide text-xs font-bold mb-2"
           for="last-name"
@@ -44,8 +44,8 @@
     </div>
     <!-- Name -->
     <!-- Email & Phone -->
-    <div class="flex flex-wrap -mx-3 mb-6">
-      <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+    <div class="flex flex-wrap justify-center items-center -mx-3 md:mb-6">
+      <div class="md:w-1/2 px-3 mb-6 md:mb-0 w-3/4">
         <label
           class="block uppercase tracking-wide text-xs font-bold mb-2"
           for="email"
@@ -63,7 +63,7 @@
           }"
         />
       </div>
-      <div class="w-full md:w-1/2 px-3">
+      <div class="md:w-1/2 px-3 mb-6 md:mb-0 w-3/4">
         <label
           class="block uppercase tracking-wide text-xs font-bold mb-2"
           for="phone"
@@ -84,8 +84,8 @@
     </div>
     <!-- Email & Phone -->
     <!-- Text Area -->
-    <div class="flex flex-wrap -mx-3 mb-6">
-      <div class="w-full mb-6 md:mb-0">
+    <div class="flex flex-wrap justify-center items-center -mx-3 md:mb-6">
+      <div class="md:w-full mb-6 md:mb-0 w-3/4">
         <label
           for="message"
           class="block uppercase px-3 tracking-wide text-xs font-bold mb-2"
@@ -107,24 +107,27 @@
     </div>
     <!-- Text Area -->
     <!-- Button -->
-    <button
-      @click.prevent="submitForm"
-      :disabled="pending"
-      class="px-6 py-3 rounded font-bold transition-all duration-300 ease-in-out"
-    >
-      Submit
-    </button>
+    <div class="w-full flex items-center justify-center md:block">
+      <button
+        @click.prevent="submitForm"
+        :disabled="pending"
+        class="px-6 py-3 rounded font-bold transition-all duration-300 ease-in-out"
+      >
+        Submit
+      </button>
+    </div>
+
     <!-- Button -->
   </form>
   <section
     v-if="isNotifShowing && notifMessage[0] === 'success'"
-    class="pop-up absolute rounded-2xl p-6 right-12 -top-2"
+    class="pop-up md:absolute md:w-1/5 p-4 md:right-12 md:top-20 md:bottom-auto fixed bottom-0 w-full text-center rounded-2xl"
   >
     <h1>✔️ {{ notifMessage[1] }}</h1>
   </section>
   <section
     v-else-if="isNotifShowing && notifMessage[0] === 'error'"
-    class="pop-up absolute rounded-2xl p-6 right-12 -top-2"
+    class="pop-up md:absolute md:w-1/5 p-4 md:right-12 md:top-20 md:bottom-auto fixed bottom-0 w-full text-center rounded-2xl"
   >
     <h1>❌ {{ notifMessage[1] }}</h1>
   </section>

@@ -1,12 +1,14 @@
 <template>
-  <header class="relative w-full py-8 flex justify-between items-center">
-    <div class="font-sans font-semibold mx-10">
-      <NuxtLink to="/" class="mx-4">Home</NuxtLink>
-      <NuxtLink to="/about" class="mx-4">About</NuxtLink>
-      <NuxtLink to="/contact" class="mx-4">Contact</NuxtLink>
+  <header
+    class="relative w-full pt-8 md:px-12 px-8 flex justify-between items-center"
+  >
+    <div class="font-sans font-semibold">
+      <NuxtLink to="/" class="md:mx-4">Home</NuxtLink>
+      <NuxtLink to="/about" class="mx-6">About</NuxtLink>
+      <NuxtLink to="/contact" class="md:mx-4">Contact</NuxtLink>
     </div>
     <div
-      class="relative mr-16 cursor-pointer p-2 rounded-full notif-circle"
+      class="relative cursor-pointer p-2 rounded-full notif-circle"
       @click.prevent="notificationOn"
     >
       <div
@@ -34,7 +36,7 @@
   </header>
 
   <!-- Notification -->
-  <div class="absolute w-[1000px] h-auto top-12 right-12">
+  <div class="absolute md:w-[1000px] w-[800px] h-auto top-12 right-12">
     <clientOnly>
       <AppNotification
         @notificationOff="notificationOff"
@@ -59,11 +61,11 @@ function notificationOff() {
   isNotificationShowing.value = false;
 }
 
-onMounted(() => {
-  setTimeout(() => {
-    notificationOn();
-  }, 9000);
-});
+// onMounted(() => {
+//   setTimeout(() => {
+//     notificationOn();
+//   }, 9000);
+// });
 </script>
 
 <style scoped lang="scss">

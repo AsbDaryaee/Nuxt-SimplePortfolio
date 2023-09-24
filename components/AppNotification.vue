@@ -7,7 +7,7 @@
         <span class="font-medium text-sm">New Notification</span>
         <button
           @click.prevent="$emit('notificationOff')"
-          class="-mr-1 h-5 w-5 rounded-full flex justify-center items-center"
+          class="-mr-1 h-5 md:w-5 w-12 rounded-full flex justify-center items-center"
         >
           <svg class="h-2 w-2 fill-current items-center" viewBox="0 0 20 20">
             <path
