@@ -15,4 +15,13 @@ export default defineNuxtConfig({
     options: {},
     modelsDir: "models",
   },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "~/assets/css/colors.scss" as *;',
+        },
+      },
+    },
+  },
 });

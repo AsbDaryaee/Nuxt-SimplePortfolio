@@ -1,22 +1,20 @@
 <template>
-  <header
-    class="relative w-full h-20 flex justify-between items-center overflow-hidden bg-[#252B48]"
-  >
-    <div class="text-slate-500 font-sans font-semibold mx-10">
+  <header class="relative w-full py-8 flex justify-between items-center">
+    <div class="font-sans font-semibold mx-10">
       <NuxtLink to="/" class="mx-4">Home</NuxtLink>
       <NuxtLink to="/about" class="mx-4">About</NuxtLink>
       <NuxtLink to="/contact" class="mx-4">Contact</NuxtLink>
     </div>
     <div
-      class="relative mr-16 cursor-pointer bg-[#2d3350] p-2 rounded-full"
+      class="relative mr-16 cursor-pointer p-2 rounded-full notif-circle"
       @click.prevent="notificationOn"
     >
       <div
         v-show="notificationAlert"
-        class="absolute w-2 h-2 bg-red-500 rounded-full top-1 right-1 notifRed"
+        class="absolute w-2 h-2 rounded-full top-1 right-1 notif-alert"
       ></div>
-      <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-        <g class="fill-[#42b883]">
+      <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="svg">
+        <g>
           <path
             d="m 13 6.5 c 0 2.761719 -2.238281 5 -5 5 s -5 -2.238281 -5 -5 s 2.238281 -5 5 -5 s 5 2.238281 5 5 z m 0 0"
           />
@@ -36,7 +34,7 @@
   </header>
 
   <!-- Notification -->
-  <div class="absolute w-[1000px] h-auto top-7 right-12">
+  <div class="absolute w-[1000px] h-auto top-12 right-12">
     <clientOnly>
       <AppNotification
         @notificationOff="notificationOff"
@@ -68,14 +66,22 @@ onMounted(() => {
 });
 </script>
 
-<style>
-svg {
-  width: 25px;
-  height: 25px;
-}
+<style scoped lang="scss">
+header {
+  background-color: $navy-blue;
+  color: $mid-gray;
+  .svg {
+    fill: $green;
+  }
 
-.notifRed {
-  animation: opacity 3s linear infinite;
+  .notif-alert {
+    animation: opacity 3s linear infinite;
+    background-color: $red;
+  }
+
+  .notif-circle {
+    background-color: $light-navy-blue;
+  }
 }
 
 @keyframes opacity {
@@ -89,9 +95,5 @@ svg {
   100% {
     opacity: 0%;
   }
-}
-
-.router-link-active {
-  @apply text-[#42b883] border-b-4 border-[#393f5b];
 }
 </style>

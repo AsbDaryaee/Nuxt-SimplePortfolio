@@ -1,24 +1,20 @@
 <template>
   <div
-    class="w-full flex justify-center items-center h-[calc(100vh-10rem)] px-14"
+    class="w-full h-[calc(100vh-50%)] flex gap-2 py-8 items-center justify-center"
   >
-    <section class="w-1/3 h-auto">
+    <section class="w-1/3">
       <img
         id="tilt"
         width="80%"
-        src="/images/profile.jpg"
+        :src="profileImg"
         alt="Amirhosein's Portrait"
-        class="rounded-full border-8 border-[#42b883] shadow-sm hover:shadow-xl transition-all duration-300 ease-in-out"
+        class="rounded-full shadow-sm hover:shadow-xl transition-all duration-300 ease-in-out"
         draggable="false"
       />
     </section>
     <section class="w-1/2 h-auto">
       <article class="flex flex-col justify-center items-center">
-        <h1
-          class="text-4xl self-start border-b-2 border-b-[#42b883] text-slate-200 my-4 tracking-wide"
-        >
-          About Me
-        </h1>
+        <h1 class="text-4xl self-start my-4 tracking-wide pb-2">About Me</h1>
         <p class="text-slate-50 indent-4 text-justify">
           I started my programming journey in college, when I was studying
           genetics. I quickly realized that I wasn't passionate about genetics,
@@ -34,4 +30,17 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import profileImg from "~/assets/images/profile.jpg";
+</script>
+
+<style lang="scss" scoped>
+img {
+  border: solid 8px $green;
+}
+
+h1 {
+  border-bottom: solid 2px $green;
+  color: $gray;
+}
+</style>

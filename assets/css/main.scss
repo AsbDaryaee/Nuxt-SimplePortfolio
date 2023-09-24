@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import "./colors.scss";
+
+.svg {
+  width: 25px;
+  height: 25px;
+}
+
+.router-link-active {
+  color: $green;
+  border-bottom: solid 6px $light-navy-blue;
+  padding-bottom: 0.2rem;
+  border-radius: 0.2rem;
+}
