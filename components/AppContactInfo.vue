@@ -1,6 +1,6 @@
 <template>
   <section class="contact-info-container">
-    <div class="mb-4">
+    <div class="contact-link">
       <NuxtLink
         to="https://linkedin.com/in/a-moayeri"
         class="flex gap-4 items-center justify-start text-xl rounded-xl px-4 py-1"
@@ -21,7 +21,7 @@
       </NuxtLink>
     </div>
 
-    <div class="mb-4">
+    <div class="contact-link">
       <NuxtLink
         to="tel:+16315422584"
         class="flex gap-4 items-center justify-start text-xl rounded-xl px-4 py-1"
@@ -45,7 +45,7 @@
       </NuxtLink>
     </div>
 
-    <div class="mb-4">
+    <div class="contact-link w-min">
       <NuxtLink
         to="mailto: contact@ymir.ir"
         class="flex gap-4 items-center justify-start text-xl rounded-xl px-4 py-1"
@@ -68,7 +68,7 @@
       </NuxtLink>
     </div>
 
-    <div class="mb-4">
+    <div class="contact-link w-min">
       <NuxtLink
         to="https://t.me/asbdaryaee"
         class="flex gap-4 items-center justify-start text-xl rounded-xl px-4 py-1"
@@ -88,7 +88,7 @@
         <p>@asbdaryaee</p>
       </NuxtLink>
     </div>
-    <div class="mb-4">
+    <div class="contact-link w-min">
       <NuxtLink
         to="https:///github.com/asbdaryaee"
         class="flex gap-4 items-center justify-start text-xl rounded-xl px-4 py-1"
@@ -136,5 +136,14 @@
   border-left: solid 4px $green;
   padding-left: 0.5rem;
   color: $gray;
+
+  .contact-link {
+    transition: all ease-in-out 0.4s;
+    margin-bottom: 1rem;
+  }
+  .contact-link:hover {
+    color: $green;
+    transform: translateX(10%);
+  }
 }
 </style>

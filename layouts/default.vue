@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto pb-8">
+  <div class="container mx-auto">
     <AppNavbar />
     <slot />
   </div>

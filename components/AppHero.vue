@@ -18,7 +18,6 @@
 <style lang="scss" scoped>
 section {
   background-color: $navy-blue;
-
   h1 {
     color: $white;
     border-bottom: solid 2px $green;

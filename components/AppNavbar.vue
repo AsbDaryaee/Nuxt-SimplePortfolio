@@ -1,6 +1,6 @@
 <template>
   <header
-    class="relative w-full pt-8 md:px-12 px-8 flex justify-between items-center"
+    class="relative w-full pt-4 md:px-12 px-8 flex justify-between items-center"
   >
     <div class="font-sans font-semibold">
       <NuxtLink to="/" class="md:mx-4">Home</NuxtLink>
@@ -36,7 +36,7 @@
   </header>
 
   <!-- Notification -->
-  <div class="absolute md:w-[1000px] w-[800px] h-auto top-12 right-12">
+  <div class="absolute md:w-[1000px] w-[800px] h-auto top-8 right-8">
     <clientOnly>
       <AppNotification
         @notificationOff="notificationOff"

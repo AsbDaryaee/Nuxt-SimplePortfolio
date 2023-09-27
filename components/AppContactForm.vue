@@ -4,7 +4,7 @@
   </h1>
   <form>
     <!-- Name -->
-    <div class="flex justify-center items-center flex-wrap -mx-3 md:mb-6">
+    <div class="flex justify-center items-center flex-wrap md:mb-6">
       <div class="md:w-1/2 px-3 mb-6 md:mb-0 w-3/4">
         <label
           class="block uppercase tracking-wide text-xs font-bold mb-2"
@@ -44,7 +44,7 @@
     </div>
     <!-- Name -->
     <!-- Email & Phone -->
-    <div class="flex flex-wrap justify-center items-center -mx-3 md:mb-6">
+    <div class="flex flex-wrap justify-center items-center md:mb-6">
       <div class="md:w-1/2 px-3 mb-6 md:mb-0 w-3/4">
         <label
           class="block uppercase tracking-wide text-xs font-bold mb-2"
@@ -84,7 +84,7 @@
     </div>
     <!-- Email & Phone -->
     <!-- Text Area -->
-    <div class="flex flex-wrap justify-center items-center -mx-3 md:mb-6">
+    <div class="flex flex-wrap justify-center items-center md:mb-6">
       <div class="md:w-full mb-6 md:mb-0 w-3/4">
         <label
           for="message"
@@ -107,7 +107,7 @@
     </div>
     <!-- Text Area -->
     <!-- Button -->
-    <div class="w-full flex items-center justify-center md:block">
+    <div class="w-full flex items-center justify-center md:block md:ml-3">
       <button
         @click.prevent="submitForm"
         :disabled="pending"

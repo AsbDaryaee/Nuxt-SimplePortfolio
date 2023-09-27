@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full md:h-[calc(100vh-10rem)] flex md:flex-row flex-col py-4 mx-auto items-center justify-center"
+    class="w-full md:h-[calc(100vh-10rem)] flex md:flex-row flex-col py-4 pb-12 mx-auto items-center justify-center"
   >
     <section class="md:w-1/3 flex items-center justify-center">
       <img
