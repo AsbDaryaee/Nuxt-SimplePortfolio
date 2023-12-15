@@ -143,7 +143,7 @@ import {
   numeric,
 } from "@vuelidate/validators";
 import { useVuelidate } from "@vuelidate/core";
-import Message from "~/types/message.type";
+import type { Message } from "~/types/message.type";
 
 const rules = computed(() => {
   return {
@@ -187,7 +187,9 @@ async function submitForm() {
   const result = await v$.value.$validate();
 
   if (result) {
-    sendData({ ...contactForm });
+    await sendData({ ...contactForm });
+    resetForm();
+    v$.value.$reset();
   } else {
     notifMessage.value[0] = "error";
     notifMessage.value[1] = "Please Fill The Form Carefully...";
@@ -215,6 +217,14 @@ async function sendData(payload: Message) {
     isNotifShowing.value = true;
     pending.value = false;
   }
+}
+
+function resetForm() {
+  contactForm.email = "";
+  contactForm.firstName = "";
+  contactForm.lastName = "";
+  contactForm.message = "";
+  contactForm.phone = "";
 }
 </script>
 

@@ -9,6 +9,8 @@
         alt="Amirhosein's Portrait"
         class="rounded-full shadow-sm hover:shadow-xl transition-all md:w-3/4 md:mt-0 w-1/2 mt-8 duration-300 ease-in-out"
         draggable="false"
+        width="500"
+        height="500"
       />
     </section>
     <section class="md:w-1/2 px-8">

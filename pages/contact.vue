@@ -14,11 +14,5 @@
 <script setup lang="ts">
 useHead({
   title: "Ymir | Contact",
-  meta: [
-    {
-      name: "robots",
-      content: "index, follow",
-    },
-  ],
 });
 </script>

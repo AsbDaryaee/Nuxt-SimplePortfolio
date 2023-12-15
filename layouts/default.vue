@@ -4,3 +4,14 @@
     <slot />
   </div>
 </template>
+
+<script setup lang="ts">
+useHead({
+  meta: [
+    {
+      name: "robots",
+      content: "index, follow",
+    },
+  ],
+});
+</script>

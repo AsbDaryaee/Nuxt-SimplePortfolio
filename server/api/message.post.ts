@@ -1,4 +1,4 @@
-import Message from "~/types/message.type";
+import type { Message } from "~/types/message.type";
 import { MessageSchema } from "../models/message.model";
 
 export default defineEventHandler(async (event) => {
