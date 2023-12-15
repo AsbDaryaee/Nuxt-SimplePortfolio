@@ -11,6 +11,11 @@ const url = useRequestURL();
 useHead({
   meta: [
     {
+      name: "description",
+      content:
+        "Explore the portfolio of Amir H. Moayeri, a passionate JavaScript developer specializing in front-end and full-stack development.",
+    },
+    {
       name: "keywords",
       content: `Amir H. Moayeri, JavaScript Developer, Web Developer Portfolio, Front-end Developer, Full Stack Developer, Vue Developer, Responsive Web Design, Web Application Development, JavaScript Frameworks, Code Optimization, Mobile-Friendly Development, HTML5, CSS3, Software Engineer, Node.js, Node.js Development, Portfolio Projects, Interactive Websites, Amir Moayeri, Moayeri Web Development, Creative Coding, API Integration, Nuxt Developer, Javascript, Ymir Developer, Ymir Github, Ymir Vue 3, Ymir Nuxt 3, امیرحسین معیری, یمیر, فرانت اند دولوپر, برنامه نویسی ویو, جاوااسکریپت یمیر`,
     },
