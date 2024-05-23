@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import data from "~/data/svg.json";
 
 const hoverID = ref(-10);
 const hoverFlag = ref(false);
@@ -32,7 +32,6 @@ function changeColorOn(id: number) {
   hoverID.value = id;
 }
 
-import data from "~/data/svg.json";
 </script>
 
 <style lang="scss" scoped>

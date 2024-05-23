@@ -16,26 +16,31 @@
   },
   {
     "id": 3,
+    "name": "typescript icon",
+    "svg": "/images/svg/typescript.svg"
+  },
+  {
+    "id": 4,
     "name": "nodejs icon",
     "svg": "/images/svg/nodejs.svg"
   },
   {
-    "id": 4,
+    "id": 5,
     "name": "vuejs icon",
     "svg": "/images/svg/vuejs.svg"
   },
   {
-    "id": 5,
+    "id": 6,
     "name": "nuxtjs icon",
     "svg": "/images/svg/nuxtjs.svg"
   },
   {
-    "id": 6,
+    "id": 7,
     "name": "react icon",
     "svg": "/images/svg/react.svg"
   },
   {
-    "id": 7,
+    "id": 8,
     "name": "tailwind icon",
     "svg": "/images/svg/tailwind.svg"
   }
