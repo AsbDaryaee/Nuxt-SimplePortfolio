@@ -17,14 +17,17 @@
       <article class="flex flex-col justify-center items-center">
         <h1 class="text-4xl md:self-start my-4 tracking-wide pb-2">About Me</h1>
         <p class="indent-4 text-justify">
-          I started my programming journey in college, when I was studying
-          genetics. I quickly realized that I wasn't passionate about genetics,
-          but I was fascinated by the idea of using code to create something
-          new. I started teaching myself Python, and then I met JavaScript.
-          JavaScript opened up a whole new world of possibilities for me, and I
-          quickly fell in love with both backend and frontend development. Since
-          then, I've built a number of web applications and I'm excited to see
-          what the future holds for me in the field of software engineering.
+          I'm a JavaScript developer with a passion for building engaging video
+          experiences. Currently, I'm neck-deep in developing and maintaining a
+          VOD and Live streaming project using the powerful Nuxt.js framework.
+          Beyond this project, I've tackled various freelance challenges, honing
+          my skills in React, Express.js, and even ffmpeg for video
+          manipulation. My curious nature keeps me constantly learning and
+          updating my knowledge base. In fact, I try to add a new piece to my
+          developer puzzle every single day! If you're looking for a skilled and
+          curious developer with a knack for building captivating video
+          experiences, you might have just found your match. Let's connect and
+          see what we can create together!
         </p>
       </article>
     </section>
