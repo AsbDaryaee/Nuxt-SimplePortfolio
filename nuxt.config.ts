@@ -7,14 +7,18 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+
   app: {
     pageTransition: { name: "page", mode: "out-in" },
   },
+  runtimeConfig: {
+    mongoose: { uri: process.env.NUXT_MONGOOSE_URI },
+  },
   mongoose: {
-    uri: process.env.MONGODB_URI,
     options: {},
     modelsDir: "models",
   },
+
   vite: {
     css: {
       preprocessorOptions: {
