@@ -1,6 +1,7 @@
 export default defineNuxtConfig({
   modules: ["nuxt-mongoose"],
   css: ["~/assets/css/main.scss"],
+
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -11,9 +12,11 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: "page", mode: "out-in" },
   },
+
   runtimeConfig: {
     mongoose: { uri: process.env.NUXT_MONGOOSE_URI },
   },
+
   mongoose: {
     options: {},
     modelsDir: "models",
@@ -28,4 +31,6 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  compatibilityDate: "2025-03-30",
 });

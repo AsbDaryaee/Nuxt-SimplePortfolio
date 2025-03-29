@@ -11,13 +11,13 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "^0.8.5",
-    "@types/node": "^20.12.12",
-    "autoprefixer": "^10.4.19",
-    "nuxt": "^3.11.2",
+    "@types/node": "^20.17.28",
+    "autoprefixer": "^10.4.21",
+    "nuxt": "^3.16.1",
     "nuxt-mongoose": "^1.0.6",
-    "postcss": "^8.4.38",
-    "sass": "^1.77.2",
-    "tailwindcss": "^3.4.3"
+    "postcss": "^8.5.3",
+    "sass": "^1.86.0",
+    "tailwindcss": "^3.4.17"
   },
   "dependencies": {
     "@vuelidate/core": "^2.0.3",
